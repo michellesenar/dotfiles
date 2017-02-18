@@ -1,0 +1,15 @@
+[user]
+	name = Michelle Senar
+	email = senarmichelle@gmail.com
+
+[alias]
+	lg = log --graph --name-status --oneline
+	st = status
+
+[core]
+	editor = vim
+
+[color "status"]
+	header = white bold
+	changed = red
+	untracked = yellow
