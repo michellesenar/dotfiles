@@ -14,10 +14,10 @@ set number
 
 " Set syntax on
 syntax on
- 
+
 " Case insensitive search
 set ic
- 
+
 " Higlhight search
 set hls
 
@@ -26,7 +26,7 @@ set lbr
 
 " NERDTree abbreviations
 command! NT NERDTree
-command! NC NerdTreeClose
+command! NC NERDTreeClose
 nnoremap tr <c-w>t
 
 " Cycle through windows

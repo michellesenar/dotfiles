@@ -11,11 +11,15 @@ alias ls='ls -GFh'
 
 # git related
 alias gl='git log --oneline -n 10'
+alias gitsync='git checkout master; git pull upstream master; git push fork master'
 
 # change directories
 alias dl='cd ~/Downloads'
 alias doc='cd ~/Documents'
 alias work='cd ~/workspace'
+
+# commands i can't remember
+alias rmpyc='find . -name "*.pyc" -exec rm -f {} \;'
 
 #export PATH="/usr/local/sbin:$PATH"
 
@@ -28,3 +32,6 @@ source /usr/local/bin/virtualenvwrapper.sh
   if [ -f $(brew --prefix)/etc/bash_completion ]; then
 	      . $(brew --prefix)/etc/bash_completion
 	        fi
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

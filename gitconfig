@@ -5,6 +5,8 @@
 [alias]
 	lg = log --graph --name-status --oneline
 	st = status
+	br = branch
+	co = checkout
 
 [core]
 	editor = vim
