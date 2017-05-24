@@ -9,6 +9,9 @@ export PS1='\e[0;36m\u:\w$ \[\]\em'
 alias subl='/Applications/Sublime\ Text\ 3.app/Contents/SharedSupport/bin/subl'
 alias ls='ls -GFh'
 
+# ipython
+alias ipy="python -c 'import IPython; IPython.terminal.ipapp.launch_new_instance()'"
+
 # git related
 alias gl='git log --oneline -n 10'
 alias gitsync='git checkout master; git pull upstream master; git push fork master'
