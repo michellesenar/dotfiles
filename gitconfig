@@ -7,6 +7,7 @@
 	st = status
 	br = branch
 	co = checkout
+	expunge = "!sh -c 'git push fork --delete \"$0\" && git branch -D \"$0\"'"
 
 [core]
 	editor = vim

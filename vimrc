@@ -5,6 +5,7 @@ autocmd BufWritePre * %s/\s\+$//e
 " Indent automatically depending on filetype
 filetype indent on
 set autoindent
+set paste
 
 " Because backspace on a Mac is the delete key
 set backspace=2

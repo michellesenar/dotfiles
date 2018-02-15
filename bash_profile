@@ -23,7 +23,7 @@ alias work='cd ~/workspace'
 
 # commands i can't remember
 alias rmpyc='find . -name "*.pyc" -exec rm -f {} \;'
-
+alias vgs='vagrant global-status'
 #export PATH="/usr/local/sbin:$PATH"
 
 # for virtualenvwrapper
