@@ -1,0 +1,20 @@
+[user]
+	name = Michelle Senar
+	email = msenar@qti.qualcomm.com
+
+[alias]
+	lg = log --graph --name-status --oneline
+	st = status
+	br = branch
+	co = checkout
+	expunge = "!sh -c 'git push fork --delete \"$0\" && git branch -D \"$0\"'"
+
+[core]
+	editor = vim
+
+[color "status"]
+	header = white bold
+	changed = red
+	untracked = yellow
+[cola]
+	spellcheck = false

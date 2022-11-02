@@ -1,0 +1,6 @@
+.DS_Store
+*.git/*
+*.kube/cache/*
+.nvm/.git/*
+.oh-my-zsh/.git/*
+.vim/*/.git/*
