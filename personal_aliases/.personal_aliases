@@ -1,0 +1,6 @@
+# personal comp
+alias hello="echo hello"
+alias book="cd ~/workspace/book_club"
+alias bookclubenv="source ~/workspace/book_club/BOOK/bin/activate"
+alias leetcode="cd ~/workspace/leetcode"
+alias lintzsh="markdownlint --disable MD001 MD013 MD019 MD022 MD025 MD026 MD034 MD037 -- $HOME/.zshrc"

@@ -1,23 +1,29 @@
 #!/bin/zsh
 
-echo "Backing up necessary files and folders"
+echo "---Backing up necessary files and folders"
 
-cp ~/.CFUserTextEncoding ~/dotfiles/
-cp ~/.gitconfig ~/dotfiles/
-cp ~/.npmrc ~/dotfiles/
-cp ~/.pgpass_example ~/dotfiles/
-cp ~/.vimrc ~/dotfiles/
-cp ~/.yarnrc ~/dotfiles/
-cp ~/.zshrc ~/dotfiles/
-cp ~/.work_aliases ~/dotfiles/for_work_only
-cp -R ~/.config ~/dotfiles/
-cp -R ~/.kube ~/dotfiles/
-cp -R ~/.nvm ~/dotfiles/
-cp -R ~/.oh-my-zsh ~/dotfiles/
-cp ~/.ssh/config ~/dotfiles/.ssh
-cp ~/.ssh/known_hosts ~/dotfiles/.ssh
-cp -R ~/.vim ~/dotfiles/
-cp -R ~/.zsh ~/dotfiles/
+cp ~/.CFUserTextEncoding ~/workspace/dotfiles/
+cp ~/.gitconfig ~/workspace/dotfiles/
+cp ~/.npmrc ~/workspace/dotfiles/
+cp ~/.pgpass_example ~/workspace/dotfiles/
+cp ~/.vimrc ~/workspace/dotfiles/
+cp ~/.yarnrc ~/workspace/dotfiles/
+cp ~/.zshrc ~/workspace/dotfiles/
+cp -R ~/.config ~/workspace/dotfiles/
+cp -R ~/.nvm ~/workspace/dotfiles/
+cp -R ~/.oh-my-zsh ~/workspace/dotfiles/
+cp ~/.ssh/config ~/workspace/dotfiles/.ssh
+cp -R ~/.vim ~/workspace/dotfiles/
+cp -R ~/.zsh ~/workspace/dotfiles/
 
-echo "Done"
+echo "---Copying .work_aliases and .personal_alises into their own directories"
+cp ~/.work_aliases ~/workspace/dotfiles/work_aliases
+cp ~/.personal_aliases ~/workspace/dotfiles/personal_aliases
+
+echo "---Copying '~/.kube' directory. Make sure to remove any creds"
+cp -R ~/.kube ~/workspace/dotfiles/
+
+echo "---You should manually copy your own .ssh/known_hosts file over"
+
+echo "---Done"
 

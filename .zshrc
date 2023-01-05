@@ -1,9 +1,10 @@
-# If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+# I like to lint this file as if it's Markdown but ignore some rules.
+# https://github.com/igorshubovych/markdownlint-cli
+# $ markdownlint --disable MD001 MD013 MD019 MD022 MD025 MD026 MD034 MD037 -- .zshrc
+#
 
-# Custom keyboard bindings
-bindkey "^[^[[D" backward-word
-bindkey "^[^[[C" forward-word
+# If you come from bash you might have to change your $PATH.
+export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -30,10 +31,10 @@ CASE_SENSITIVE="true"
 # Uncomment one of the following lines to change the auto-update behavior
 # zstyle ':omz:update' mode disabled  # disable automatic updates
 # zstyle ':omz:update' mode auto      # update automatically without asking
-# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
+# @todo zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 # Uncomment the following line to change how often to auto-update (in days).
-# zstyle ':omz:update' frequency 13
+# @todo zstyle ':omz:update' frequency 13
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
@@ -100,20 +101,28 @@ export PATH=/opt/homebrew/bin:$PATH
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias ls='ls -GFh'
+# Example aliases
+alias ohmyzsh="vim ~/.oh-my-zsh"
+alias clear_all_aliases="unalias -m '*'"
+
+# aliases per computer (aka work vs personal)
+source $HOME/.personal_aliases
+alias vima="vim $HOME/.personal_aliases"
+
+source $HOME/.work_aliases
+alias vimwork="vim $HOME/.work_aliases"
 
 # productivity
+alias ls='ls -GFh'
 alias reload="source ~/.zshrc"
-alias editprofile='vim ~/.zshrc'
+alias vimz='vim ~/.zshrc'
 alias dockershow="docker ps --format '{{.ID}}\t{{.Image}}'"
+alias lintmd="markdownlint"
 
-# ipython
-alias ipy="python -c 'import IPython; IPython.terminal.ipapp.launch_new_instance()'"
+# ipython - https://sourabhbajaj.com/mac-setup/Python/ipython.html
+# Make sure pyenv global is py3
+ alias ipy="ipython"
 
 # restart docker
 alias reset_docker='docker-compose down; docker-compose pull; docker-compose build --pull console'
@@ -133,7 +142,7 @@ fpath=(~/.zsh $fpath)
 
 autoload -Uz compinit && compinit
 
-# direnv
+# direnv ($ brew install direnv)
 eval "$(direnv hook zsh)"
 
 # k8s things
@@ -240,5 +249,5 @@ alias kru='kubectl rollout undo'
 alias ksd='kubectl scale deployment'
 alias ksss='kubectl scale statefulset'
 
-
+# haskell
 [ -f "/Users/msenar/.ghcup/env" ] && source "/Users/msenar/.ghcup/env" # ghcup-env
